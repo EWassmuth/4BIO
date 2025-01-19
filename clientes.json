@@ -1,0 +1,113 @@
+[
+  {
+    "Id": 1,
+    "Nome": "Pessoa 1",
+    "Email": "pessoa1@gmail.edu.ar",
+    "Cpf": "111.111.111-11",
+    "Rg": "111.111.111-11",
+    "Contato": [
+      {
+        "Id": 1,
+        "TipoContato": "Comercial",
+        "Ddd": 49,
+        "Telefone": "11111-1111"
+      },
+      {
+        "Id": 5,
+        "TipoContato": "Comercial",
+        "Ddd": 0,
+        "Telefone": "22222-2222"
+      }
+    ],
+    "Endereco": [
+      {
+        "Id": 1,
+        "TipoEndereco": "Casa",
+        "Cep": "11111-111",
+        "Logradouro": "Avenida Argentina",
+        "Numero": 0,
+        "Bairro": "Centro",
+        "Complemento": "Casa",
+        "Cidade": "Xanxere",
+        "Estado": "SC",
+        "Referencia": "Ao lado da XXXXXX"
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "Nome": "Pessoa 22",
+    "Email": "pessoa22@gmail.com",
+    "Cpf": "222.222.222-22",
+    "Rg": "222.222.222-22",
+    "Contato": [
+      {
+        "Id": 2,
+        "TipoContato": "Celular com whats",
+        "Ddd": 49,
+        "Telefone": "22222-0000"
+      },
+      {
+        "Id": 6,
+        "TipoContato": "Comercial",
+        "Ddd": 0,
+        "Telefone": "22222-2222"
+      }
+    ],
+    "Endereco": [
+      {
+        "Id": 2,
+        "TipoEndereco": "Entrega",
+        "Cep": "33333-333",
+        "Logradouro": "Avenida Argentina",
+        "Numero": 33,
+        "Bairro": "Centro",
+        "Complemento": "Casa",
+        "Cidade": "Xanxere",
+        "Estado": "SC",
+        "Referencia": "Ao lado da XXXXXX"
+      },
+      {
+        "Id": 5,
+        "TipoEndereco": "Casa",
+        "Cep": "11111-111",
+        "Logradouro": "Avenida Argentina",
+        "Numero": 0,
+        "Bairro": "Centro",
+        "Complemento": "Casa",
+        "Cidade": "Xanxere",
+        "Estado": "SC",
+        "Referencia": "Ao lado da XXXXXX"
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "Nome": "Pessoa 99",
+    "Email": "pessoa99@gmail.com",
+    "Cpf": "999.999.999-99",
+    "Rg": "999.999.999-99",
+    "Contato": [
+      {
+        "Id": 9,
+        "TipoContato": "Celular com whats",
+        "Ddd": 99,
+        "Telefone": "99999-0000"
+      }
+    ],
+    "Endereco": [
+      {
+        "Id": 8,
+        "TipoEndereco": "Entrega",
+        "Cep": "33333-333",
+        "Logradouro": "Avenida Argentina",
+        "Numero": 33,
+        "Bairro": "Centro",
+        "Complemento": "Casa",
+        "Cidade": "Xanxere",
+        "Estado": "SC",
+        "Referencia": "Ao lado da XXXXXX"
+      }
+    ]
+  }
+]

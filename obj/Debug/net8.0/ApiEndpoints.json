@@ -1,0 +1,192 @@
+[
+  {
+    "ContainingType": "ExemploApi.Controllers.ClienteController",
+    "Method": "AtualizarCliente",
+    "RelativePath": "Cliente/atualizar/cliente/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "AtualizarClienteDto",
+        "Type": "ExemploApi.Models.DTO.AtualizarClienteDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ExemploApi.Controllers.ClienteController",
+    "Method": "AtualizarContato",
+    "RelativePath": "Cliente/atualizar/contato/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "contatoDto",
+        "Type": "ExemploApi.Models.DTO.ContatoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ExemploApi.Controllers.ClienteController",
+    "Method": "AtualizarEndereco",
+    "RelativePath": "Cliente/atualizar/endereco/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "enderecoDto",
+        "Type": "ExemploApi.Models.DTO.EnderecoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ExemploApi.Controllers.ClienteController",
+    "Method": "CriarCliente",
+    "RelativePath": "Cliente/criar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "clienteDto",
+        "Type": "ExemploApi.Models.DTO.ClienteDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ExemploApi.Controllers.ClienteController",
+    "Method": "AdicionarContato",
+    "RelativePath": "Cliente/criar/contato",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cpf",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "contatoDto",
+        "Type": "ExemploApi.Models.DTO.ContatoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ExemploApi.Controllers.ClienteController",
+    "Method": "AdicionarEndereco",
+    "RelativePath": "Cliente/criar/endereco",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cpf",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "enderecoDto",
+        "Type": "ExemploApi.Models.DTO.EnderecoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ExemploApi.Controllers.ClienteController",
+    "Method": "ListarClientes",
+    "RelativePath": "Cliente/listar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nome",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "cpf",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ExemploApi.Controllers.ClienteController",
+    "Method": "RemoverCliente",
+    "RelativePath": "Cliente/remover/cliente/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ExemploApi.Controllers.ClienteController",
+    "Method": "RemoverContato",
+    "RelativePath": "Cliente/remover/contato/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ExemploApi.Controllers.ClienteController",
+    "Method": "RemoverEndereco",
+    "RelativePath": "Cliente/remover/endereco/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
