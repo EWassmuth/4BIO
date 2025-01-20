@@ -14,7 +14,6 @@ namespace ExemploApi.Persistencia
                 return true;
             }
             else throw new Exception("Erro ao validar o e-mail");
-
         }
 
         public bool ValidarCpf(string? cpf)
@@ -24,7 +23,6 @@ namespace ExemploApi.Persistencia
             if (regex.IsMatch(cpf))
                 return true;
             else throw new Exception("Erro ao validar o CPF");
-
         }
 
         public bool ValidarRg(string rg)
@@ -34,7 +32,6 @@ namespace ExemploApi.Persistencia
             if (regex.IsMatch(rg))
                 return true;
             else throw new Exception("Erro ao validar o Rg");
-
         }
 
         public bool ValidarCep(string cep)
@@ -46,7 +43,6 @@ namespace ExemploApi.Persistencia
             }
             else 
                 throw new Exception("Erro ao validar o cep");
-
         }
 
         public bool ValidarTelefone(string telefone)
@@ -58,7 +54,6 @@ namespace ExemploApi.Persistencia
             }
             else
                 throw new Exception("Erro ao validar o telefone");
-
         }
 
         public bool ValidarDadosCliente(Cliente cliente)
@@ -68,7 +63,6 @@ namespace ExemploApi.Persistencia
             bool cpfValido = ValidarCpf(cliente.Cpf);
             bool rgValido = ValidarRg(cliente.Rg);
 
-            // Validar CEP para cada endereço
             bool enderecosValidos = cliente.Endereco != null && cliente.Endereco.All(e => ValidarCep(e.Cep));
 
             return emailValido && cpfValido && rgValido && enderecosValidos;

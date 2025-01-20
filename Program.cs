@@ -3,13 +3,11 @@ using ExemploApi.Servicos;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//-------------------------//
 
 builder.Services.AddControllers();
 builder.Services.AddSingleton<ClienteRepository>();
 builder.Services.AddTransient<ClienteService>();
 
-//-------------------------//
 
 // Add services to the container.
 

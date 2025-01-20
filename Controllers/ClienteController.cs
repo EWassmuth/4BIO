@@ -22,6 +22,7 @@ namespace ExemploApi.Controllers
         public IActionResult ListarClientes([FromQuery] string nome = null, [FromQuery] string cpf = null)
         {
             var clientes = _service.GetAll(nome, cpf);
+
             if(!clientes.Any())
                 return NotFound();
 
@@ -31,7 +32,6 @@ namespace ExemploApi.Controllers
         [HttpPost("criar")]
         public IActionResult CriarCliente([FromBody] ClienteDto clienteDto)
         {
-            
             var cliente = new Cliente
             {
                 Nome = clienteDto.Nome,
@@ -57,7 +57,9 @@ namespace ExemploApi.Controllers
         [HttpPut("atualizar/cliente/{id}")]
         public IActionResult AtualizarCliente(int id, [FromBody] AtualizarClienteDto AtualizarClienteDto)
         {
-            if (_service.GetClienteById(id) == null) return NotFound();
+            if (_service.GetClienteById(id) == null)
+                return NotFound();
+
             var cliente = new Cliente
             {
                 Nome = AtualizarClienteDto.Nome,
@@ -80,15 +82,13 @@ namespace ExemploApi.Controllers
             return NoContent();
         }
 
-        [HttpDelete("remover/cliente/{id}")]
-        public IActionResult RemoverCliente(int id)
+        [HttpDelete("remover/cliente/{cpf}")]
+        public IActionResult RemoverCliente(string cpf)
         {
-            var cliente = _service.GetClienteById(id);
-
-            if (cliente == null)
+            if (_service.GetClienteByCpf(cpf)  == null)
                 return StatusCode(StatusCodes.Status404NotFound, new { error = "Cliente não encontrado" });
 
-            _service.DeleteCliente(id);
+            _service.DeleteCliente(cpf);
             return NoContent();
         }
 
@@ -99,9 +99,7 @@ namespace ExemploApi.Controllers
         [HttpPost("criar/endereco")]
         public IActionResult AdicionarEndereco([FromQuery] string cpf, [FromBody] EnderecoDto enderecoDto)
         {
-            var cliente = _service.GetClienteByCpf(cpf);
-            
-            if (cliente == null)
+            if (_service.GetClienteByCpf(cpf) == null)
                 return StatusCode(StatusCodes.Status404NotFound, new { error = "Cliente não encontrado" });
 
             var endereco = new Endereco(
@@ -131,9 +129,9 @@ namespace ExemploApi.Controllers
 
         [HttpPut("atualizar/endereco/{id}")]
         public IActionResult AtualizarEndereco(int id, [FromBody] EnderecoDto enderecoDto)
-
         {
-            if (_service.GetEnderecoById(id) == null) return NotFound();
+            if (_service.GetEnderecoById(id) == null)
+                return NotFound();
 
             var endereco = new Endereco(
                 enderecoDto.TipoEndereco,
@@ -179,9 +177,7 @@ namespace ExemploApi.Controllers
         [HttpPost("criar/contato")]
         public IActionResult AdicionarContato([FromQuery] string cpf, [FromBody] ContatoDto contatoDto)
         {
-            var cliente = _service.GetClienteByCpf(cpf);
-
-            if (cliente == null)
+            if (_service.GetClienteByCpf(cpf)  == null)
                 return StatusCode(StatusCodes.Status404NotFound, new { error = "Cliente não encontrado" });
 
             var contato = new Contato(
@@ -205,7 +201,8 @@ namespace ExemploApi.Controllers
         [HttpPut("atualizar/contato/{id}")]
         public IActionResult AtualizarContato(int id, [FromBody] ContatoDto contatoDto)
         {
-            if (_service.GetContatoById(id) == null) return NotFound();
+            if (_service.GetContatoById(id) == null)
+                return NotFound();
 
             var contato = new Contato(
                 contatoDto.TipoContato,

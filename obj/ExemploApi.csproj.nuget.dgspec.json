@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Repos\\ExemploApi\\ExemploApi.csproj": {}
+    "C:\\Users\\Emanuel\\Desktop\\4BIO\\API\\4BIO\\ExemploApi.csproj": {}
   },
   "projects": {
-    "C:\\Repos\\ExemploApi\\ExemploApi.csproj": {
+    "C:\\Users\\Emanuel\\Desktop\\4BIO\\API\\4BIO\\ExemploApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Repos\\ExemploApi\\ExemploApi.csproj",
+        "projectUniqueName": "C:\\Users\\Emanuel\\Desktop\\4BIO\\API\\4BIO\\ExemploApi.csproj",
         "projectName": "ExemploApi",
-        "projectPath": "C:\\Repos\\ExemploApi\\ExemploApi.csproj",
+        "projectPath": "C:\\Users\\Emanuel\\Desktop\\4BIO\\API\\4BIO\\ExemploApi.csproj",
         "packagesPath": "C:\\Users\\Emanuel\\.nuget\\packages\\",
-        "outputPath": "C:\\Repos\\ExemploApi\\obj\\",
+        "outputPath": "C:\\Users\\Emanuel\\Desktop\\4BIO\\API\\4BIO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Emanuel\\AppData\\Roaming\\NuGet\\NuGet.Config",

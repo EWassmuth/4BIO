@@ -24,14 +24,12 @@ namespace ExemploApi.Servicos
         public Cliente GetClienteByCpf(string cpf) => _repository.GetClienteByCpf(cpf);
         public void CreateCliente(Cliente cliente) => _repository.CreateCliente(cliente);
         public void UpdateCliente(Cliente cliente) => _repository.UpdateCliente(cliente);
-        public void DeleteCliente(int id) => _repository.DeleteCliente(id);
-
+        public void DeleteCliente(string cpf) => _repository.DeleteCliente(cpf);
         #endregion
 
         #region Endereco
 
         public void CreateEndereco(string cpf, Endereco endereco) => _repository.CreateEndereco(cpf, endereco);
-
         public void DeleteEndereco(int id) => _repository.DeleteEndereco(id);
         public void UpdateEndereco(Endereco endereco) => _repository.UpdateEndereco(endereco);
 

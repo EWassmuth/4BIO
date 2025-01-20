@@ -1,8 +1,5 @@
 ﻿namespace ExemploApi.Models
 {
-    //public record Endereco(int Id, string? Cep, string? Logradouro, int? Numero, string? Bairro, string? Complemento, string? Cidade, string? Estado, string? Referencia);
-    //public record Contato(int Id, string? Email, int? Ddd, string? Telefone);
-
     public class Cliente
     {
         public int Id { get; set; }
@@ -18,7 +15,6 @@
     {
         public Endereco(string? tipoEndereco, string cep, string logradouro, int? numero, string bairro, string complemento, string cidade, string estado, string referencia)
         {
-            //Id = idGerado;
             TipoEndereco = tipoEndereco;
             Cep = cep;
             Logradouro = logradouro;

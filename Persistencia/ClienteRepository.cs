@@ -10,11 +10,6 @@ namespace ExemploApi.Persistencia
     {
         private readonly string _filePath = "clientes.json";
         private List<Cliente> _clientes;
-        private List<Endereco> _enderecos;
-
-        private int _ultimoClienteId = 0;
-        private int _ultimoEnderecoId = 0;
-        private int _ultimoContatoId = 0;
 
         Validacao validacao = new Validacao();
 
@@ -30,17 +25,9 @@ namespace ExemploApi.Persistencia
             {
                 var jsonData = File.ReadAllText(_filePath);
                 _clientes = JsonSerializer.Deserialize<List<Cliente>>(jsonData, options) ?? new List<Cliente>();
-                _enderecos = JsonSerializer.Deserialize<List<Endereco>>(jsonData, options) ?? new List<Endereco>();
-
-                _ultimoClienteId = _clientes.Any() ? _clientes.Max(c => c.Id) : 0;
-                _ultimoEnderecoId = _clientes.Where(e => e.Endereco != null).SelectMany(e => e.Endereco).Select(e => e.Id).DefaultIfEmpty(0).Max();
-                _ultimoContatoId = _clientes.Where(c => c.Contato != null).SelectMany(c => c.Contato).Select(c => c.Id).DefaultIfEmpty(0).Max();
-
             }
             else
-            {
                 _clientes = new List<Cliente>();
-            }
         }
 
         #region Cliente
@@ -65,7 +52,7 @@ namespace ExemploApi.Persistencia
             {
                 foreach (var endereco in cliente.Endereco)
                 {
-                    endereco.Id = ++_ultimoEnderecoId;
+                    endereco.Id = _clientes.Where(e => e.Endereco != null).SelectMany(e => e.Endereco).Select(e => e.Id).DefaultIfEmpty(1).Max() + 1;
                 }
             }
 
@@ -73,11 +60,9 @@ namespace ExemploApi.Persistencia
             {
                 foreach (var contato in cliente.Contato)
                 {
-                    contato.Id = ++_ultimoContatoId;
+                    contato.Id = _clientes.Where(c => c.Contato != null).SelectMany(c => c.Contato).Select(c => c.Id).DefaultIfEmpty(1).Max() + 1;
                 }
             }
-
-
 
             _clientes.Add(cliente);
             SaveToFile();
@@ -109,9 +94,9 @@ namespace ExemploApi.Persistencia
             }
         }
 
-        public void DeleteCliente(int id)
+        public void DeleteCliente(string cpf)
         {
-            var cliente = GetClienteById(id);
+            var cliente = GetClienteByCpf(cpf);
             if (cliente != null)
             {
                 _clientes.Remove(cliente);
@@ -136,7 +121,7 @@ namespace ExemploApi.Persistencia
             if (cliente == null)
                 return;
 
-            endereco.Id = ++_ultimoEnderecoId;
+            endereco.Id = _clientes.Where(e => e.Endereco != null).SelectMany(e => e.Endereco).Select(e => e.Id).DefaultIfEmpty(1).Max() + 1;
 
             cliente.Endereco.Add(endereco);
 
@@ -190,7 +175,7 @@ namespace ExemploApi.Persistencia
             if (cliente == null)
                 return;
 
-            contato.Id = ++_ultimoContatoId;
+            contato.Id = _clientes.Where(c => c.Contato != null).SelectMany(c => c.Contato).Select(c => c.Id).DefaultIfEmpty(1).Max() + 1;
 
             cliente.Contato.Add(contato);
 
@@ -226,9 +211,8 @@ namespace ExemploApi.Persistencia
             if (contato == null)
                 return;
 
-            // Remove o endereço
             cliente.Contato.Remove(contato);
-            SaveToFile(); // Salva as alterações
+            SaveToFile();
         }
 
         #endregion
