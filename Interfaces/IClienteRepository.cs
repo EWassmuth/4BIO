@@ -15,7 +15,7 @@ namespace ExemploApi.Interfaces
 
         public void CreateCliente(Cliente cliente);
         public void UpdateCliente(Cliente cliente);
-        public void DeleteCliente(string cpf);
+        public void DeleteCliente(int id);
 
         #endregion
 

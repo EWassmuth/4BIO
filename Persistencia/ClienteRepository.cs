@@ -52,7 +52,8 @@ namespace ExemploApi.Persistencia
             {
                 foreach (var endereco in cliente.Endereco)
                 {
-                    endereco.Id = _clientes.Where(e => e.Endereco != null).SelectMany(e => e.Endereco).Select(e => e.Id).DefaultIfEmpty(1).Max() + 1;
+                    //endereco.Id = _clientes.Where(e => e.Endereco != null).SelectMany(e => e.Endereco).Select(e => e.Id).DefaultIfEmpty(1).Max() + 1;
+                    endereco.Id = GetEnderecoId();
                 }
             }
 
@@ -60,7 +61,8 @@ namespace ExemploApi.Persistencia
             {
                 foreach (var contato in cliente.Contato)
                 {
-                    contato.Id = _clientes.Where(c => c.Contato != null).SelectMany(c => c.Contato).Select(c => c.Id).DefaultIfEmpty(1).Max() + 1;
+                    //contato.Id = _clientes.Where(c => c.Contato != null).SelectMany(c => c.Contato).Select(c => c.Id).DefaultIfEmpty(1).Max() + 1;
+                    contato.Id = GetContatoId();
                 }
             }
 
@@ -94,9 +96,9 @@ namespace ExemploApi.Persistencia
             }
         }
 
-        public void DeleteCliente(string cpf)
+        public void DeleteCliente(int id)
         {
-            var cliente = GetClienteByCpf(cpf);
+            var cliente = GetClienteById(id);
             if (cliente != null)
             {
                 _clientes.Remove(cliente);
@@ -121,7 +123,8 @@ namespace ExemploApi.Persistencia
             if (cliente == null)
                 return;
 
-            endereco.Id = _clientes.Where(e => e.Endereco != null).SelectMany(e => e.Endereco).Select(e => e.Id).DefaultIfEmpty(1).Max() + 1;
+            //endereco.Id = _clientes.Where(e => e.Endereco != null).SelectMany(e => e.Endereco).Select(e => e.Id).DefaultIfEmpty(1).Max() + 1;
+            endereco.Id = GetContatoId();
 
             cliente.Endereco.Add(endereco);
 
@@ -175,7 +178,8 @@ namespace ExemploApi.Persistencia
             if (cliente == null)
                 return;
 
-            contato.Id = _clientes.Where(c => c.Contato != null).SelectMany(c => c.Contato).Select(c => c.Id).DefaultIfEmpty(1).Max() + 1;
+            //contato.Id = _clientes.Where(c => c.Contato != null).SelectMany(c => c.Contato).Select(c => c.Id).DefaultIfEmpty(1).Max() + 1;
+            contato.Id = GetContatoId();
 
             cliente.Contato.Add(contato);
 
@@ -217,6 +221,8 @@ namespace ExemploApi.Persistencia
 
         #endregion
 
+        private int GetEnderecoId() => _clientes.Where(e => e.Endereco != null).SelectMany(e => e.Endereco).Select(e => e.Id).DefaultIfEmpty(1).Max() + 1;
+        private int GetContatoId() => _clientes.Where(c => c.Contato != null).SelectMany(c => c.Contato).Select(c => c.Id).DefaultIfEmpty(1).Max() + 1;
 
         public int FindClienteId(int? enderecoId, int? contatoId)
         {
@@ -234,8 +240,6 @@ namespace ExemploApi.Persistencia
 
             return -1;
         }
-
-
         private void SaveToFile()
         {
             var jsonData = JsonSerializer.Serialize(_clientes, new JsonSerializerOptions { WriteIndented = true });

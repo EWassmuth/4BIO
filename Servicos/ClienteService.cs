@@ -15,8 +15,6 @@ namespace ExemploApi.Servicos
         public IEnumerable<Cliente> GetAll(string nome = null, string cpf = null) =>
             _repository.GetAll(nome, cpf);
 
-        public Endereco GetEnderecoById(int id) => _repository.GetEnderecoById(id);
-        public Contato GetContatoById(int id) => _repository.GetContatoById(id);
 
         #region Cliente
 
@@ -24,11 +22,12 @@ namespace ExemploApi.Servicos
         public Cliente GetClienteByCpf(string cpf) => _repository.GetClienteByCpf(cpf);
         public void CreateCliente(Cliente cliente) => _repository.CreateCliente(cliente);
         public void UpdateCliente(Cliente cliente) => _repository.UpdateCliente(cliente);
-        public void DeleteCliente(string cpf) => _repository.DeleteCliente(cpf);
+        public void DeleteCliente(int id) => _repository.DeleteCliente(id);
         #endregion
 
         #region Endereco
 
+        public Endereco GetEnderecoById(int id) => _repository.GetEnderecoById(id);
         public void CreateEndereco(string cpf, Endereco endereco) => _repository.CreateEndereco(cpf, endereco);
         public void DeleteEndereco(int id) => _repository.DeleteEndereco(id);
         public void UpdateEndereco(Endereco endereco) => _repository.UpdateEndereco(endereco);
@@ -37,6 +36,7 @@ namespace ExemploApi.Servicos
 
         #region Contato
 
+        public Contato GetContatoById(int id) => _repository.GetContatoById(id);
         public void CreateContato(string cpf, Contato contato) => _repository.CreateContato(cpf, contato);
         public void DeleteContato(int id) => _repository.DeleteContato(id);
         public void UpdateContato(Contato contato) => _repository.UpdateContato(contato);

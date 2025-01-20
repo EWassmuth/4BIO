@@ -40,46 +40,11 @@
         "TipoContato": "Celular com whats",
         "Ddd": 49,
         "Telefone": "22222-0000"
-      },
-      {
-        "Id": 3,
-        "TipoContato": "Comercial",
-        "Ddd": 49,
-        "Telefone": "11111-1111"
       }
     ],
     "Endereco": [
       {
         "Id": 2,
-        "TipoEndereco": "Entrega",
-        "Cep": "33333-333",
-        "Logradouro": "Avenida Argentina",
-        "Numero": 33,
-        "Bairro": "Centro",
-        "Complemento": "Casa",
-        "Cidade": "Xanxere",
-        "Estado": "SC",
-        "Referencia": "Ao lado da XXXXXX"
-      }
-    ]
-  },
-  {
-    "Id": 3,
-    "Nome": "Pessoa 99",
-    "Email": "pessoa99@gmail.com",
-    "Cpf": "999.999.999-99",
-    "Rg": "999.999.999-99",
-    "Contato": [
-      {
-        "Id": 4,
-        "TipoContato": "Comercial",
-        "Ddd": 49,
-        "Telefone": "11111-1111"
-      }
-    ],
-    "Endereco": [
-      {
-        "Id": 3,
         "TipoEndereco": "Entrega",
         "Cep": "33333-333",
         "Logradouro": "Avenida Argentina",

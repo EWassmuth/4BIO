@@ -82,13 +82,13 @@ namespace ExemploApi.Controllers
             return NoContent();
         }
 
-        [HttpDelete("remover/cliente/{cpf}")]
-        public IActionResult RemoverCliente(string cpf)
+        [HttpDelete("remover/cliente/{id}")]
+        public IActionResult RemoverCliente(int id)
         {
-            if (_service.GetClienteByCpf(cpf)  == null)
+            if (_service.GetClienteById(id)  == null)
                 return StatusCode(StatusCodes.Status404NotFound, new { error = "Cliente não encontrado" });
 
-            _service.DeleteCliente(cpf);
+            _service.DeleteCliente(id);
             return NoContent();
         }
 

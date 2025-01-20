@@ -144,14 +144,14 @@
   {
     "ContainingType": "ExemploApi.Controllers.ClienteController",
     "Method": "RemoverCliente",
-    "RelativePath": "Cliente/remover/cliente/{cpf}",
+    "RelativePath": "Cliente/remover/cliente/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "cpf",
-        "Type": "System.String",
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
