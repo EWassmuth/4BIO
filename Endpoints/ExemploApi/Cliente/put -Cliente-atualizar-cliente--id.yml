@@ -1,0 +1,56 @@
+info:
+  name: put /Cliente/atualizar/cliente/:id
+  type: http
+  seq: 3
+  tags:
+    - Cliente
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/Cliente/atualizar/cliente/:id"
+  params:
+    - name: id
+      value: ""
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "nome": "",
+        "email": "",
+        "cpf": "",
+        "rg": ""
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: Success
+    request:
+      url: "{{baseUrl}}/Cliente/atualizar/cliente/:id"
+      method: PUT
+      params:
+        - name: id
+          value: ""
+          type: path
+      body:
+        type: json
+        data: |-
+          {
+            "nome": "",
+            "email": "",
+            "cpf": "",
+            "rg": ""
+          }
+    response:
+      status: 200
+      statusText: OK
+      body:
+        type: text
+        data: ""

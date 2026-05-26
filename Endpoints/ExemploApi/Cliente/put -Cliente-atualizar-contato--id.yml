@@ -1,0 +1,54 @@
+info:
+  name: put /Cliente/atualizar/contato/:id
+  type: http
+  seq: 9
+  tags:
+    - Cliente
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/Cliente/atualizar/contato/:id"
+  params:
+    - name: id
+      value: ""
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "tipoContato": "",
+        "ddd": 0,
+        "telefone": ""
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: Success
+    request:
+      url: "{{baseUrl}}/Cliente/atualizar/contato/:id"
+      method: PUT
+      params:
+        - name: id
+          value: ""
+          type: path
+      body:
+        type: json
+        data: |-
+          {
+            "tipoContato": "",
+            "ddd": 0,
+            "telefone": ""
+          }
+    response:
+      status: 200
+      statusText: OK
+      body:
+        type: text
+        data: ""

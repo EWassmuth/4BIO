@@ -1,0 +1,66 @@
+info:
+  name: put /Cliente/atualizar/endereco/:id
+  type: http
+  seq: 6
+  tags:
+    - Cliente
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/Cliente/atualizar/endereco/:id"
+  params:
+    - name: id
+      value: ""
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "tipoEndereco": "",
+        "cep": "",
+        "logradouro": "",
+        "numero": 0,
+        "bairro": "",
+        "complemento": "",
+        "cidade": "",
+        "estado": "",
+        "referencia": ""
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: Success
+    request:
+      url: "{{baseUrl}}/Cliente/atualizar/endereco/:id"
+      method: PUT
+      params:
+        - name: id
+          value: ""
+          type: path
+      body:
+        type: json
+        data: |-
+          {
+            "tipoEndereco": "",
+            "cep": "",
+            "logradouro": "",
+            "numero": 0,
+            "bairro": "",
+            "complemento": "",
+            "cidade": "",
+            "estado": "",
+            "referencia": ""
+          }
+    response:
+      status: 200
+      statusText: OK
+      body:
+        type: text
+        data: ""
