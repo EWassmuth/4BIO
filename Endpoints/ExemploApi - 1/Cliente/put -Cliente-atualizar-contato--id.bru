@@ -1,0 +1,62 @@
+meta {
+  name: put /Cliente/atualizar/contato/:id
+  type: http
+  seq: 10
+  tags: [
+    Cliente
+  ]
+}
+
+put {
+  url: {{baseUrl}}/Cliente/atualizar/contato/:id
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: 
+}
+
+body:json {
+  {
+    "tipoContato": "",
+    "ddd": 0,
+    "telefone": ""
+  }
+}
+
+example {
+  name: 200 Response
+  description: Success
+  
+  request: {
+    url: {{baseUrl}}/Cliente/atualizar/contato/:id
+    method: PUT
+    mode: json
+    params:path: {
+      id: 
+    }
+  
+    body:json: {
+      {
+        "tipoContato": "",
+        "ddd": 0,
+        "telefone": ""
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

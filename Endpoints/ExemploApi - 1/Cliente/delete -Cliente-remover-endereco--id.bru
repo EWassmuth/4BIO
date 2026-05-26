@@ -1,0 +1,46 @@
+meta {
+  name: delete /Cliente/remover/endereco/:id
+  type: http
+  seq: 8
+  tags: [
+    Cliente
+  ]
+}
+
+delete {
+  url: {{baseUrl}}/Cliente/remover/endereco/:id
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: 
+}
+
+example {
+  name: 200 Response
+  description: Success
+  
+  request: {
+    url: {{baseUrl}}/Cliente/remover/endereco/:id
+    method: DELETE
+    mode: none
+    params:path: {
+      id: 
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

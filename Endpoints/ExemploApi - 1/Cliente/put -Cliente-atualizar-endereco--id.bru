@@ -1,0 +1,74 @@
+meta {
+  name: put /Cliente/atualizar/endereco/:id
+  type: http
+  seq: 7
+  tags: [
+    Cliente
+  ]
+}
+
+put {
+  url: {{baseUrl}}/Cliente/atualizar/endereco/:id
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: 
+}
+
+body:json {
+  {
+    "tipoEndereco": "",
+    "cep": "",
+    "logradouro": "",
+    "numero": 0,
+    "bairro": "",
+    "complemento": "",
+    "cidade": "",
+    "estado": "",
+    "referencia": ""
+  }
+}
+
+example {
+  name: 200 Response
+  description: Success
+  
+  request: {
+    url: {{baseUrl}}/Cliente/atualizar/endereco/:id
+    method: PUT
+    mode: json
+    params:path: {
+      id: 
+    }
+  
+    body:json: {
+      {
+        "tipoEndereco": "",
+        "cep": "",
+        "logradouro": "",
+        "numero": 0,
+        "bairro": "",
+        "complemento": "",
+        "cidade": "",
+        "estado": "",
+        "referencia": ""
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

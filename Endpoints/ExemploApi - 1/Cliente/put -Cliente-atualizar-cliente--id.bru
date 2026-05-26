@@ -1,0 +1,64 @@
+meta {
+  name: put /Cliente/atualizar/cliente/:id
+  type: http
+  seq: 4
+  tags: [
+    Cliente
+  ]
+}
+
+put {
+  url: {{baseUrl}}/Cliente/atualizar/cliente/:id
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: 
+}
+
+body:json {
+  {
+    "nome": "",
+    "email": "",
+    "cpf": "",
+    "rg": ""
+  }
+}
+
+example {
+  name: 200 Response
+  description: Success
+  
+  request: {
+    url: {{baseUrl}}/Cliente/atualizar/cliente/:id
+    method: PUT
+    mode: json
+    params:path: {
+      id: 
+    }
+  
+    body:json: {
+      {
+        "nome": "",
+        "email": "",
+        "cpf": "",
+        "rg": ""
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

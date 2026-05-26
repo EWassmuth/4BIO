@@ -1,0 +1,62 @@
+meta {
+  name: post /Cliente/criar/contato
+  type: http
+  seq: 9
+  tags: [
+    Cliente
+  ]
+}
+
+post {
+  url: {{baseUrl}}/Cliente/criar/contato
+  body: json
+  auth: inherit
+}
+
+params:query {
+  ~cpf: 
+}
+
+body:json {
+  {
+    "tipoContato": "",
+    "ddd": 0,
+    "telefone": ""
+  }
+}
+
+example {
+  name: 200 Response
+  description: Success
+  
+  request: {
+    url: {{baseUrl}}/Cliente/criar/contato
+    method: POST
+    mode: json
+    params:query: {
+      ~cpf: 
+    }
+  
+    body:json: {
+      {
+        "tipoContato": "",
+        "ddd": 0,
+        "telefone": ""
+      }
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}

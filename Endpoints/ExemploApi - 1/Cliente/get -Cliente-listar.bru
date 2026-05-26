@@ -1,0 +1,52 @@
+meta {
+  name: get /Cliente/listar
+  type: http
+  seq: 1
+  tags: [
+    Cliente
+  ]
+}
+
+get {
+  url: {{baseUrl}}/Cliente/listar
+  body: none
+  auth: inherit
+}
+
+params:query {
+  ~nome: 
+  ~cpf: 
+}
+
+vars:pre-request {
+  baseUrl: https://localhost:7051
+}
+
+example {
+  name: 200 Response
+  description: Success
+  
+  request: {
+    url: {{baseUrl}}/Cliente/listar
+    method: GET
+    mode: none
+    params:query: {
+      ~nome: 
+      ~cpf: 
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}
