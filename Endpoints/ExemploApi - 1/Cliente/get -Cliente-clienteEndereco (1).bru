@@ -1,0 +1,46 @@
+meta {
+  name: get /Cliente/clienteEndereco (1)
+  type: http
+  seq: 12
+  tags: [
+    Cliente
+  ]
+}
+
+get {
+  url: {{baseUrl}}/Cliente/clienteEndereco
+  body: none
+  auth: inherit
+}
+
+params:query {
+  ~rua: 
+}
+
+example {
+  name: 200 Response
+  description: Success
+  
+  request: {
+    url: {{baseUrl}}/Cliente/clienteEndereco
+    method: GET
+    mode: none
+    params:query: {
+      ~rua: 
+    }
+  }
+  
+  response: {
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: text
+      content: '''
+  
+      '''
+    }
+  }
+}
