@@ -56,5 +56,52 @@
         "Referencia": "Ao lado da XXXXXX"
       }
     ]
+  },
+  {
+    "Id": 3,
+    "Nome": "Jo\u00E3o da Silva",
+    "Email": "joao.silva@email.com",
+    "Cpf": "123.456.789-00",
+    "Rg": "123.456.789-00",
+    "Contato": [
+      {
+        "Id": 3,
+        "TipoContato": "Celular",
+        "Ddd": 49,
+        "Telefone": "99999-9999"
+      },
+      {
+        "Id": 3,
+        "TipoContato": "WhatsApp",
+        "Ddd": 49,
+        "Telefone": "98888-8888"
+      }
+    ],
+    "Endereco": [
+      {
+        "Id": 3,
+        "TipoEndereco": "Residencial",
+        "Cep": "89800-000",
+        "Logradouro": "Rua Nereu Ramos",
+        "Numero": 150,
+        "Bairro": "Centro",
+        "Complemento": "Apartamento 302",
+        "Cidade": "Chapec\u00F3",
+        "Estado": "SC",
+        "Referencia": "Pr\u00F3ximo \u00E0 pra\u00E7a central"
+      },
+      {
+        "Id": 3,
+        "TipoEndereco": "Comercial",
+        "Cep": "89801-500",
+        "Logradouro": "Avenida Get\u00FAlio Vargas",
+        "Numero": 850,
+        "Bairro": "L\u00EDder",
+        "Complemento": "Sala 05",
+        "Cidade": "Chapec\u00F3",
+        "Estado": "SC",
+        "Referencia": "Em frente ao mercado"
+      }
+    ]
   }
 ]

@@ -29,6 +29,17 @@ namespace ExemploApi.Controllers
             return Ok(clientes);
         }
 
+        [HttpGet("clienteEndereco")]
+        public IActionResult ListarClientesEndereco([FromQuery] string rua)
+        {
+            var clientes = _service.GetUsuarioPorEndereco(rua);
+
+            if (!clientes.Any())
+                return NotFound();
+
+            return Ok(clientes);
+        }
+
         [HttpPost("criar")]
         public IActionResult CriarCliente([FromBody] ClienteDto clienteDto)
         {

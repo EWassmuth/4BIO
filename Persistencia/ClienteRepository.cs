@@ -38,6 +38,9 @@ namespace ExemploApi.Persistencia
                 (string.IsNullOrEmpty(nome) || c.Nome.Contains(nome, StringComparison.OrdinalIgnoreCase)) &&
                 (string.IsNullOrEmpty(cpf) || c.Cpf == cpf));
         }
+
+        public IEnumerable<Cliente> GetUsuarioEndereco(string rua) => _clientes.Where(c => c.Endereco.Any(e => e.Logradouro.Contains(rua)));
+
         public Cliente GetClienteById(int id) => _clientes.FirstOrDefault(c => c.Id == id);
         public Cliente GetClienteByCpf(string cpf) => _clientes.FirstOrDefault(c => c.Cpf == cpf);
         public Cliente GetClienteByNome(string nome) => _clientes.FirstOrDefault(c => c.Nome == nome);

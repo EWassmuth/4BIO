@@ -1,13 +1,13 @@
 info:
-  name: get /Cliente/listar
+  name: get /Cliente/clienteEndereco
   type: http
-  seq: 1
+  seq: 11
   tags:
     - Cliente
 
 http:
   method: GET
-  url: "{{baseUrl}}/Cliente/listar"
+  url: "{{baseUrl}}/Cliente/clienteEndereco"
   params:
     - name: nome
       value: ""

@@ -12,32 +12,53 @@ http:
     type: json
     data: |-
       {
-        "nome": "",
-        "email": "",
-        "cpf": "",
-        "rg": "",
+        "nome": "João da Silva",
+        "email": "joao.silva@email.com",
+        "cpf": "12345678900",
+        "rg": "123456789",
         "contato": [
           {
-            "tipoContato": "",
-            "ddd": 0,
-            "telefone": ""
+            "tipoContato": "Celular",
+            "ddd": 49,
+            "telefone": "99999-9999"
+          },
+          {
+            "tipoContato": "WhatsApp",
+            "ddd": 49,
+            "telefone": "98888-8888"
           }
         ],
         "endereco": [
           {
-            "tipoEndereco": "",
-            "cep": "",
-            "logradouro": "",
-            "numero": 0,
-            "bairro": "",
-            "complemento": "",
-            "cidade": "",
-            "estado": "",
-            "referencia": ""
+            "tipoEndereco": "Residencial",
+            "cep": "89800-000",
+            "logradouro": "Rua Nereu Ramos",
+            "numero": 150,
+            "bairro": "Centro",
+            "complemento": "Apartamento 302",
+            "cidade": "Chapecó",
+            "estado": "SC",
+            "referencia": "Próximo à praça central"
+          },
+          {
+            "tipoEndereco": "Comercial",
+            "cep": "89801-500",
+            "logradouro": "Avenida Getúlio Vargas",
+            "numero": 850,
+            "bairro": "Líder",
+            "complemento": "Sala 05",
+            "cidade": "Chapecó",
+            "estado": "SC",
+            "referencia": "Em frente ao mercado"
           }
         ]
       }
   auth: inherit
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: https://localhost:7051
 
 settings:
   encodeUrl: true

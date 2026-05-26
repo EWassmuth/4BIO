@@ -15,6 +15,9 @@ namespace ExemploApi.Servicos
         public IEnumerable<Cliente> GetAll(string nome = null, string cpf = null) =>
             _repository.GetAll(nome, cpf);
 
+        public IEnumerable<Cliente> GetUsuarioPorEndereco(string rua) =>
+            _repository.GetUsuarioEndereco(rua);
+
 
         #region Cliente
 
